@@ -13,7 +13,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 
-# ---- GITHUB CONFIG ----d
+# ---- GITHUB CONFIG ----dd
 GITHUB_TOKEN = "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"
 OWNER = "dasdsa0d8s9a"
 REPO = "dsadsadsadsadasdsa"
