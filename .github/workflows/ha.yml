@@ -50,4 +50,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
           # Use xvfb-run to simulate the headed display (:99)
-          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python hamu.py
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python hamid.py
