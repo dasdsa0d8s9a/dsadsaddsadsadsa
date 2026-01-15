@@ -83,6 +83,8 @@ def generate_fetch_code() -> str:
     """Uses Selenium to generate the Base64 encoded fetch command."""
     print("--- Phase 1: Generating Fetch Payload via Selenium ---")
     chrome_options = Options()
+    chrome_options.add_argument("--headless") 
+# 2. Required for Linux/Docker/GitHub Action environments
     chrome_options.add_argument("--window-size=1920,1080")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
