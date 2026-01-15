@@ -30,6 +30,6 @@ jobs:
 
       - name: Run Script
         env:
-          # Pass the secret into the script as an environment variable
-         
+          # Replace 'YOUR_SECRET_NAME' with the actual name from your Repo Secrets
+          MY_SECRET: ${{ secrets.YOUR_SECRET_NAME }} 
         run: python ha.py
