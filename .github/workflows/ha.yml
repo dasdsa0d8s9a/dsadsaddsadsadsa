@@ -5,7 +5,7 @@ on:
 
 jobs:
   run-selenium:
-    runs-on: ubuntu-latest # This defaults to 24.04 now
+    runs-on: ubuntu-latest # This uses Ubuntu 24.04
 
     steps:
       - name: Checkout Code
@@ -16,9 +16,10 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install System Dependencies
+      - name: Install Correct System Dependencies
         run: |
           sudo apt-get update
+          # These are the specific packages available in Ubuntu 24.04 (Noble)
           sudo apt-get install -y \
             xvfb \
             libxi6 \
@@ -57,13 +58,12 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
 
-      - name: Install Python Dependencies
-        run: |
-          pip install selenium requests pyvirtualdisplay
+      - name: Install Python Libs
+        run: pip install selenium requests
 
-      - name: Run Script via Xvfb
+      - name: Run Script with Virtual Display
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
-          # xvfb-run provides the X11 display (headed mode) automatically
+          # xvfb-run creates the 'Headed' environment (Display :99)
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python hamu.py
