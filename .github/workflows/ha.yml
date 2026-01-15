@@ -49,4 +49,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
           # xvfb-run creates a virtual desktop for 'Headed' mode
-          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python hamu.py
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python hamid.py
